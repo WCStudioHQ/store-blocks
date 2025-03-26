@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "store-blocks/product-table",
+	"title": "Product Table",
+	"version": "0.1.0",
+	"category": "Woocommerce",
+	"icon": "smiley",
+	"description": "This is Product table blocks.",
+	"attributes": {
+        "categoryId": {
+            "type": "string",
+            "default": ""
+        },
+        "numberOfProducts": {
+            "type": "number",
+            "default": 10
+        },
+        "products": {
+            "type": "array",
+            "default": []
+        }
+    },
+	"supports": {
+		"html": false
+	},
+	"textdomain": "store-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

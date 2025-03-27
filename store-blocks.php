@@ -122,7 +122,8 @@ function store_blocks_enqueue_block_assets()
 	);
 
 	wp_localize_script('store-blocks-view-script', 'storeBlocksData', [
-		'ajax_url' => admin_url('admin-ajax.php')
+		'ajax_url' => admin_url('admin-ajax.php'),
+		'nonce' => wp_create_nonce('store_blocks_add_to_cart')
 	]);
 
 	wp_enqueue_script('store-blocks-view-script');
@@ -130,24 +131,31 @@ function store_blocks_enqueue_block_assets()
 
 function store_blocks_add_to_cart()
 {
+	
+	if (!check_ajax_referer('store_blocks_add_to_cart', 'nonce', false)) {
+		wp_send_json_error(array("message" => "Nonce verification failed."));
+		return;
+	}
 	if (!isset($_POST['product_id']) || !isset($_POST['quantity'])) {
-        wp_send_json_error(array("message" => "Invalid product or quantity"));
-    }
+		wp_send_json_error(array("message" => "Invalid product, quantity"));
+	}
 
-    $product_id = intval($_POST['product_id']);
-    $quantity = intval($_POST['quantity']);
+	$product_id = intval($_POST['product_id']);
+	$quantity = intval($_POST['quantity']);
 
-    if ($quantity <= 0) {
-        $quantity = 1;
-    }
+	if ($quantity <= 0) {
+		$quantity = 1;
+	}
 
-    $added = WC()->cart->add_to_cart($product_id, $quantity);
+	$added = WC()->cart->add_to_cart($product_id, $quantity);
 
-    if ($added) {
-        wp_send_json_success(array("message" => "Product added to cart!"));
-    } else {
-        wp_send_json_error(array("message" => "Could not add product to cart."));
-    }
+	if ($added) {
+		wp_send_json_success(array(
+		     "success"=> true,
+			 "message" => "Product added to cart!"));
+	} else {
+		wp_send_json_error(array("message" => "Could not add product to cart."));
+	}
 }
 
 add_action('wp_ajax_store_blocks_add_to_cart', 'store_blocks_add_to_cart');

@@ -24,7 +24,8 @@
 /* eslint-enable no-console */
 jQuery(document).ready(function($) {
     $(".add-to-cart-btn").click(function(event) {
-        event.preventDefault(); // Prevent page refresh
+        event.preventDefault(); 
+
 
         let button = $(this);
         let productId = button.data("product_id");
@@ -32,22 +33,20 @@ jQuery(document).ready(function($) {
         console.log(productId, quantity);
         $.ajax({
             type: "POST",
-            url: storeBlocksData.ajax_url, // From wp_localize_script
+            url: storeBlocksData.ajax_url, 
             data: {
                 action: "store_blocks_add_to_cart",
                 product_id: productId,
-                quantity: quantity
+                quantity: quantity,
+                nonce: storeBlocksData.nonce
             },
+            
             beforeSend: function() {
                 button.text("Adding...").prop("disabled", true);
             },
             success: function(response) {
                 if (response.success) {
-                    $("#cart-message").text("✔ " + response.message).fadeIn().delay(2000).fadeOut();
-                    let cartCount = $("#cart-count");
-                    if (cartCount.length) {
-                        cartCount.text(response.cart_count);
-                    }
+                    window.location.reload();
                 } else {
                     alert("Error: " + response.message);
                 }

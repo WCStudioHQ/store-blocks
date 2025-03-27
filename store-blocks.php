@@ -55,14 +55,29 @@ add_action('init', 'create_store_blocks_init');
 /**
  * Server-side rendering for the block.
  */
-function render_block_product_table($attributes, $content)
+function render_block_product_table($attributes)
 {
 	// Fetch WooCommerce Products
-	$products = wc_get_products(array(
+	$cate = isset($attributes['categoryId']) && !empty($attributes['categoryId']) ? intval($attributes['categoryId']) : null;
+	$args = array(
 		'status' => 'publish',
-		'limit' => -1,
-	));
+		'limit' => isset($attributes['perPage']) ? intval($attributes['perPage']) : 10,
+		'orderby' => 'date',
+		'order' => isset($attributes['orderBy']) ? $attributes['orderBy'] : 'DESC',
+	);
 
+	if ($cate) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'product_cat',
+				'field' => 'term_id',
+				'terms' => $cate,
+				'operator' => 'IN',
+			),
+		);
+	}
+	$products = wc_get_products($args);
+	
 	// Start output buffering
 	ob_start();
 ?>
@@ -70,8 +85,8 @@ function render_block_product_table($attributes, $content)
 		<thead>
 			<tr>
 				<th>Image</th>
-				<th>Product</th>
-				<th>Attribute</th>
+				<th>Title</th>
+				 <th>Category</th>
 				<th>Price</th>
 				<th>Quantity</th>
 
@@ -90,7 +105,13 @@ function render_block_product_table($attributes, $content)
 							<?php echo esc_html($product->get_name()); ?>
 						</a>
 					</td>
-					<td><?php echo esc_html($product->get_attribute('color')) . ' / ' . esc_html($product->get_attribute('size')); ?></td>
+			
+					<td>
+						<?php 
+						$categories = wp_strip_all_tags($product->get_categories(', '));
+						echo esc_html($categories);
+						?>
+				     </td>
 					<td><?php echo wc_price($product->get_price()); ?></td>
 					<td>
 					<input type="number" class="quantity" name="quantity" value="1" min="1">

@@ -12,14 +12,15 @@
             "type": "string",
             "default": ""
         },
-        "numberOfProducts": {
+    
+        "perPage": {
             "type": "number",
             "default": 10
         },
-        "products": {
-            "type": "array",
-            "default": []
-        }
+		"orderBy": {
+			"type": "string",
+			"default": "ASC"
+		}
     },
 	"supports": {
 		"html": false

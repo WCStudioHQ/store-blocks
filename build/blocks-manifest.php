@@ -15,15 +15,13 @@ return array(
 				'type' => 'string',
 				'default' => ''
 			),
-			'numberOfProducts' => array(
+			'perPage' => array(
 				'type' => 'number',
 				'default' => 10
 			),
-			'products' => array(
-				'type' => 'array',
-				'default' => array(
-					
-				)
+			'orderBy' => array(
+				'type' => 'string',
+				'default' => 'ASC'
 			)
 		),
 		'supports' => array(

@@ -3,7 +3,72 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-store-blocks-product-table {
+	.store-blocks-product-table {
+		width: 100%;
+		border: 1px solid #ddd;
+		border-collapse: collapse;
+		overflow-x: auto;
+		table-layout: auto;
+		
+		th,
+		td {
+			border: 1px solid #ddd;
+			border-collapse: collapse;
+			padding: 8px;
+		}
 
-.wp-block-create-block-test-block {
-	border: 1px dotted #f00;
+		.quantity {
+			width: 40px;
+		}
+
+		button {
+			border: none;
+		}
+
+		td {
+			img{
+				width: 80px;
+				height: auto;
+			}
+		}
+
+		/* Responsive styles */
+		@media (max-width: 425px) {
+			th,
+			td {
+				font-size: 12px;
+				padding: 6px;
+			}
+
+		}
+
+		@media (max-width: 768px) {
+			th,
+			td {
+				font-size: 14px;
+				padding: 7px;
+			}
+
+		}
+
+		@media (max-width: 1024px) {
+			th,
+			td {
+				font-size: 16px;
+				padding: 8px;
+			}
+
+		}
+
+		@media (min-width: 1025px) {
+			th,
+			td {
+				font-size: 18px;
+				padding: 10px;
+			}
+
+		}
+	}
+
 }

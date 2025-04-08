@@ -18,7 +18,7 @@
     },
     "orderBy": {
       "type": "string",
-      "default": "ASC"
+      "default": "date"
     }
   },
   "supports": {

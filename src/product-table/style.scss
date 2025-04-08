@@ -5,8 +5,48 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-test-block {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+.store-blocks-product-table {
+	width: 100%; 
+	overflow-x: auto; 
+
+	th, td {
+		border: 1px solid #ddd;
+		border-collapse: collapse;
+		padding: 8px; /* Added padding to every data cell */
+	}
+	.quantity{
+		width: 40px;
+	}
+	button{
+		border: none;
+	}
+
+	/* Responsive styles */
+	@media (max-width: 425px) {
+		th, td {
+			font-size: 12px;
+			padding: 6px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		th, td {
+			font-size: 14px;
+			padding: 7px;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		th, td {
+			font-size: 16px;
+			padding: 8px;
+		}
+	}
+
+	@media (min-width: 1025px) {
+		th, td {
+			font-size: 18px;
+			padding: 10px;
+		}
+	}
 }

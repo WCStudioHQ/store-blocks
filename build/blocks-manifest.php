@@ -21,7 +21,7 @@ return array(
 			),
 			'orderBy' => array(
 				'type' => 'string',
-				'default' => 'ASC'
+				'default' => 'date'
 			)
 		),
 		'supports' => array(

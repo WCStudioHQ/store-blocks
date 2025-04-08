@@ -46,7 +46,6 @@ function create_store_blocks_init()
 				)
 			);
 		}
-		// Register block styles for both frontend + backend.
 		add_action('enqueue_block_assets', 'store_blocks_enqueue_block_assets');
 	}
 }
@@ -62,8 +61,7 @@ function render_block_product_table($attributes)
 	$args = array(
 		'status' => 'publish',
 		'limit' => isset($attributes['perPage']) ? intval($attributes['perPage']) : 10,
-		'orderby' => 'date',
-		'order' => isset($attributes['orderBy']) ? $attributes['orderBy'] : 'DESC',
+		'order' => isset($attributes['orderBy']) ? $attributes['orderBy'] : 'date',
 	);
 
 	if ($cate) {
@@ -113,12 +111,12 @@ function render_block_product_table($attributes)
 						?>
 				     </td>
 					<td><?php echo wc_price($product->get_price()); ?></td>
-					<td>
+					<td class="">
 					<input type="number" class="quantity" name="quantity" value="1" min="1">
                 <button class="add-to-cart-btn" 
                     data-product_id="<?php echo esc_attr($product->get_id()); ?>" 
                     data-product_name="<?php echo esc_attr($product->get_name()); ?>">
-                    Add to Cart
+					<span class="dashicons dashicons-cart"></span> 
                 </button>
 					</td>
 				</tr>
@@ -136,9 +134,9 @@ function store_blocks_enqueue_block_assets()
 {
 	wp_register_script(
 		'store-blocks-view-script',
-		plugins_url('build/view.js', __FILE__),
+		plugins_url('build/product-table/view.js', __FILE__),
 		array('jquery'),
-		filemtime(plugin_dir_path(__FILE__) . 'build/view.js'),
+		filemtime(plugin_dir_path(__FILE__) . 'build/product-table/view.js'),
 		true
 	);
 
@@ -148,6 +146,14 @@ function store_blocks_enqueue_block_assets()
 	]);
 
 	wp_enqueue_script('store-blocks-view-script');
+	wp_enqueue_style(
+		'store-blocks-editor-style',
+		plugins_url('build/product-table/index.css', __FILE__),
+		array(),
+		filemtime(plugin_dir_path(__FILE__) . 'build/product-table/index.css')
+	);
+
+
 }
 
 function store_blocks_add_to_cart()
@@ -181,3 +187,4 @@ function store_blocks_add_to_cart()
 
 add_action('wp_ajax_store_blocks_add_to_cart', 'store_blocks_add_to_cart');
 add_action('wp_ajax_nopriv_store_blocks_add_to_cart', 'store_blocks_add_to_cart'); // Allow guests
+

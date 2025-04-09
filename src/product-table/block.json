@@ -5,8 +5,8 @@
 	"title": "Product Table",
 	"version": "0.1.0",
 	"category": "Woocommerce",
-	"icon": "smiley",
-	"description": "This is Product table blocks.",
+	"icon": "editor-table",
+	"description": "A custom Gutenberg plugin that displays WooCommerce products in a responsive, customizable product table block.",
 	"attributes": {
         "categoryId": {
             "type": "string",
@@ -20,8 +20,34 @@
 		"orderBy": {
 			"type": "string",
 			"default": "date"
+		},
+		"order": {
+			"type": "string",
+			"default": "desc"
+		 },
+		
+		"showTableCaption": {
+			"type": "boolean",
+			"default": false
+		},
+		"tableCaption":{
+			"type": "string",
+			"default": "Product Table"
+		 },
+		"captionFontSize": {
+			"type": "string",
+			"default": "16px"
+		},
+		"captionColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"captionSpacing": {
+			"type": "string",
+			"default": "10px"
 		}
-    },
+		 
+	},
 	"supports": {
 		"html": false
 	},

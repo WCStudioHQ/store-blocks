@@ -8,17 +8,25 @@
 .store-blocks-product-table {
 	width: 100%; 
 	overflow-x: auto; 
-
+	border-collapse: collapse;
+	border:1px solid #ddd;
+	table-layout: auto;
 	th, td {
-		border: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
 		border-collapse: collapse;
-		padding: 8px; /* Added padding to every data cell */
+		padding: 8px; 
 	}
 	.quantity{
 		width: 40px;
 	}
 	button{
 		border: none;
+		background-color: none;
+
+		.dashicons-cart{
+         font-size: 22px;
+		 margin-top: -4px;
+		}
 	}
 
 	/* Responsive styles */

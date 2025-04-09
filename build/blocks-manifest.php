@@ -8,8 +8,8 @@ return array(
 		'title' => 'Product Table',
 		'version' => '0.1.0',
 		'category' => 'Woocommerce',
-		'icon' => 'smiley',
-		'description' => 'This is Product table blocks.',
+		'icon' => 'editor-table',
+		'description' => 'A custom Gutenberg plugin that displays WooCommerce products in a responsive, customizable product table block.',
 		'attributes' => array(
 			'categoryId' => array(
 				'type' => 'string',
@@ -22,6 +22,30 @@ return array(
 			'orderBy' => array(
 				'type' => 'string',
 				'default' => 'date'
+			),
+			'order' => array(
+				'type' => 'string',
+				'default' => 'desc'
+			),
+			'showTableCaption' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'tableCaption' => array(
+				'type' => 'string',
+				'default' => 'Product Table'
+			),
+			'captionFontSize' => array(
+				'type' => 'string',
+				'default' => '16px'
+			),
+			'captionColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'captionSpacing' => array(
+				'type' => 'string',
+				'default' => '10px'
 			)
 		),
 		'supports' => array(

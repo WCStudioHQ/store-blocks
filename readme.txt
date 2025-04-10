@@ -16,6 +16,8 @@ Key features:
 - Fully responsive product tables
 - Live add-to-cart buttons with quantity input
 - Product filtering by category
+- Sorting by title, date, rating, and more
+- Option to order by ascending or descending
 - Easy-to-use block interface — no shortcodes
 - Server-side rendering for fast performance
 - Built using `@wordpress/scripts` for modern development
@@ -34,13 +36,19 @@ Perfect for flash sales, grouped products, or category highlights — right in p
 = Does this plugin require WooCommerce? =  
 Yes, Store Blocks is built specifically for WooCommerce and requires it to fetch product data.
 
+= How can I filter products by category? =
+You can filter products by category associated with your WooCommerce products. Simply select the categories in the block settings panel.
+
 = Can I customize the number of products displayed? =  
-Yes, the block supports attributes like per-page limit, category selection, and sorting options.
+Yes, the block supports attributes like per-page limit.You can easily choose how many products to display per page.
+
+= Can I sort the products in the table? =
+Yes! You can sort products by title, date, rating, and price. Additionally, you can specify the order to be ascending or descending.
 
 = Is it responsive? =  
 Yes, the product table layout adjusts to all screen sizes — from mobile phones to desktops.
 
 == Changelog ==
 
-= 0.1.0 =  
+= 1.0.0 =  
 * Initial release with basic product table block and AJAX add-to-cart support.

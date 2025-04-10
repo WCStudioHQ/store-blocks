@@ -121,13 +121,15 @@ function render_block_product_table($attributes)
 							?>
 						</td>
 						<td><?php echo wp_kses_post(wc_price($product->get_price())); ?></td>
-						<td class="">
+						<td >
+							<div class="store-blocks-quantity-action">
 							<input type="number" class="quantity" name="quantity" value="1" min="1">
 							<button class="add-to-cart-btn"
 								data-product_id="<?php echo esc_attr($product->get_id()); ?>"
 								data-product_name="<?php echo esc_attr($product->get_name()); ?>">
 								<span class="dashicons dashicons-cart"></span>
 							</button>
+							</div>
 						</td>
 					</tr>
 				<?php endforeach; ?>
@@ -167,6 +169,7 @@ function store_blocks_enqueue_block_assets()
 		array(),
 		filemtime(plugin_dir_path(__FILE__) . 'build/product-table/index.css')
 	);
+	
 }
 /**
  * AJAX handler for adding product to cart.

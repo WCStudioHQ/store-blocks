@@ -4,7 +4,7 @@
  * Plugin Name:       Store Blocks
  * Plugin URI:        https://github.com/WCStudioHQ/store-blocks
  * Description:       A custom Gutenberg plugin that displays WooCommerce products in a responsive, customizable product table block.
- * Version:           0.1.0
+ * Version:           1.0.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
  * Author:            WC Studio
@@ -12,7 +12,8 @@
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       store-blocks
- *
+ * Requires Plugins:  woocommerce
+ * 
  * @package CreateBlock
  */
 

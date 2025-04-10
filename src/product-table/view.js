@@ -25,8 +25,6 @@
 jQuery(document).ready(function($) {
     $(".add-to-cart-btn").click(function(event) {
         event.preventDefault(); 
-
-
         let button = $(this);
         let productId = button.data("product_id");
         let quantity = button.closest("tr").find(".quantity").val();
@@ -53,10 +51,8 @@ jQuery(document).ready(function($) {
             },
             error: function() {
                 alert("Error: Could not add to cart.");
-            },
-            complete: function() {
-                button.text("Add to Cart").prop("disabled", false);
             }
+           
         });
     });
 });

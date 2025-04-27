@@ -10,7 +10,7 @@ A Gutenberg block plugin for WooCommerce that displays products in a fully respo
 
 == Description ==
 
-**Store Blocks** is a lightweight and powerful custom Gutenberg plugin designed to display WooCommerce products in a responsive, mobile-friendly product table block. Whether you're running a small shop or managing a large catalog, this plugin lets you quickly insert and customize product listings directly within the WordPress block editor.
+**WCS Store Blocks** is a lightweight and powerful custom Gutenberg plugin designed to display WooCommerce products in a responsive, mobile-friendly product table block. Whether you're running a small shop or managing a large catalog, this plugin lets you quickly insert and customize product listings directly within the WordPress block editor.
 
 Key features:
 - Fully responsive product tables

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Store Blocks
+ * Plugin Name:       WCS Store Blocks - WooCommerce Store Builder Gutenberg Blocks
  * Plugin URI:        https://github.com/WCStudioHQ/store-blocks
  * Description:       A custom Gutenberg plugin that displays WooCommerce products in a responsive, customizable product table block.
  * Version:           1.0.1
@@ -13,7 +13,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       store-blocks
  * Requires Plugins:  woocommerce
- * 
+ *
  * @package CreateBlock
  */
 
@@ -43,7 +43,7 @@ function store_blocks_init()
 			);
 		}
 		add_action('enqueue_block_assets', 'store_blocks_enqueue_block_assets');
-	
+
 }
 add_action('init', 'store_blocks_init');
 
@@ -163,7 +163,7 @@ function store_blocks_enqueue_block_assets()
 		array(),
 		filemtime(plugin_dir_path(__FILE__) . 'build/product-table/index.css')
 	);
-	
+
 }
 /**
  * AJAX handler for adding product to cart.
@@ -201,4 +201,4 @@ function store_blocks_add_to_cart()
 }
 
 add_action('wp_ajax_store_blocks_add_to_cart', 'store_blocks_add_to_cart');
-add_action('wp_ajax_nopriv_store_blocks_add_to_cart', 'store_blocks_add_to_cart'); 
+add_action('wp_ajax_nopriv_store_blocks_add_to_cart', 'store_blocks_add_to_cart');

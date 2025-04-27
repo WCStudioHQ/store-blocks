@@ -1,8 +1,8 @@
 === Store Blocks ===
 Contributors: wcstudiohq, b-07, jalal02  
 Tags: WooCommerce, Product Table, Table, Product Listing  
-Tested up to: 6.7  
-Stable tag: 1.0.0  
+Tested up to: 6.8  
+Stable tag: 1.0.1  
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,5 +50,5 @@ Yes, the product table layout adjusts to all screen sizes — from mobile phones
 
 == Changelog ==
 
-= 1.0.0 =  
+= 1.0.1 =  
 * Initial release with basic product table block and AJAX add-to-cart support.

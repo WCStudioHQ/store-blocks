@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       WCS Store Blocks
+ * Plugin Name:       WCS Store Blocks - WooCommerce Store Builder Gutenberg Blocks
  * Plugin URI:        https://github.com/WCStudioHQ/store-blocks
  * Description:       A custom Gutenberg plugin that displays WooCommerce products in a responsive, customizable product table block.
  * Version:           1.0.1

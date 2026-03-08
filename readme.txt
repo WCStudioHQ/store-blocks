@@ -1,4 +1,4 @@
-=== WCS Store Blocks - WooCommerce Store Builder Gutenberg Blocks ===
+=== Plugin Name: WCS Store Blocks - Store Builder for WooCommerce ===
 Contributors: wcstudiohq, b-07, jalal02
 Tags: WooCommerce, Product Table, Table, Product Listing
 Tested up to: 6.8
